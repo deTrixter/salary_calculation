@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет ЗП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор ЗП</h1>
+
+        <div class="salary-inputs">
+            <label for="rate" style="color: blue; font-size: 20px;">Ставка (за 176 часов):</label>
+            <input type="number" placeholder="Введите вашу ЗП за месяц" id="rate" oninput="calculateSalary()">
+
+            <label for="bonus" style="color: rgb(0, 167, 64); font-size: 20px;">Премия:</label>
+            <input type="number" placeholder="Укажите размер премии" id="bonus" oninput="calculateSalary()">
+
+            <label for="extraBonus" style="color: rgb(136, 6, 97); font-size: 20px;">Прочие премии:</label>
+            <input type="number" placeholder="Введите сумму дополнительных премий" id="extraBonus" oninput="calculateSalary()">
+
+            <label for="penalties" style="color: rgb(255, 0, 0); font-size: 20px;">Штрафы:</label>
+            <input type="number" placeholder="Введите штрафы" id="penalties" oninput="calculateSalary()">
+        </div>
+
+        <div class="salary-info">
+            <div>Оплата за час: <span id="hourly-rate">0</span> грн.</div>
+            <div>Переработка за час: <span id="overtime-rate">0</span> грн.</div>
+            <div style="font-weight: bolder; font-size: 30px;">Итоговая ЗП: <span id="total-salary">0</span> грн.</div>
+        </div>
+
+        <div class="calendar-header">
+            <button onclick="changeMonth(-1)">«</button>
+            <span id="month-name">Ноябрь</span>
+            <button onclick="changeMonth(1)">»</button>
+        </div>
+
+        <div id="calendar"></div>
+
+        <div id="work-hours-list">
+            <h3>Список часов за месяц:</h3>
+            <ul id="hours-list"></ul>
+        </div>
+
+        <button id="reset-button">Сбросить данные за месяц</button>
+
+        
+        
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
